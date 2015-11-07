@@ -1,0 +1,37 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="mi-saludo">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2 class="page-title"><span>{{greeting}}</span></h2>
+    <span class="paper-font-body2">Escribe un mensaje...</span>
+
+    <input class="paper-font-body2" value="{{greeting::input}}">
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'mi-saludo',
+
+        properties: {
+          greeting: {
+            type: String,
+            value: 'Bienvenido!',
+            notify: true
+          }
+        }
+      });
+    })();
+  </script>
+
+</dom-module>
+
+
