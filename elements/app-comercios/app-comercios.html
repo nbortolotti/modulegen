@@ -1,0 +1,35 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+  <link rel="import" href="../../bower_components/firebase-element/firebase-collection.html">
+  <link rel="import" href="../../bower_components/firebase-element/firebase-document.html">
+
+<dom-module id="app-comercios">
+  <template>
+    <div class="vertical-section">
+      <h3>Comercios Destacados</h3>
+      <template is="dom-bind">
+        <firebase-collection
+          order-by-child="height"
+          location="https://polymernickdemo.firebaseio.com/comercios"
+          data="{{comercios}}"></firebase-collection>
+        <template is="dom-repeat" items="[[comercios]]" as="comercio">
+          <h4>[[comercio.__firebaseKey__]]</h4>
+          <span>Ganancia: </span><span>$ </span><span>[[comercio.ganancia]]</span>
+        </template>
+      </template>
+    </div>
+  </template>
+    
+<script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'app-comercios',
+
+        properties: {
+          
+        }
+      });
+    })();
+  </script>
+</dom-module>
