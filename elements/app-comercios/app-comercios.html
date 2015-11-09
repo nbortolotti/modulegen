@@ -8,7 +8,7 @@
       <h3>Comercios Destacados</h3>
       <template is="dom-bind">
         <firebase-collection
-          order-by-child="height"
+          order-by-child="ganancia"
           location="https://polymernickdemo.firebaseio.com/comercios"
           data="{{comercios}}"></firebase-collection>
         <template is="dom-repeat" items="[[comercios]]" as="comercio">
